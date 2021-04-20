@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CandidatController!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css"
+          href="{{ asset('https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css') }}">
+    {{ parent() }}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" charset="utf8"
+            src="{{ asset('https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" charset="utf8" src="{{ asset('js/init.js') }}"></script>
+
+
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des candidats</h1>
+
+        <table class="table text-center myTable">
+            <thead>
+            <tr class="align-middle">
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Date de naissance</th>
+                <th scope="col">Ref Pole Emploi</th>
+                <th scope="col">Detail</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for candidat in candidats %}
+                <tr>
+                    <th scope="row">{{ candidat.id }}</th>
+                    <td class="align-middle">{{ candidat.lastname }}</td>
+                    <td class="align-middle">{{ candidat.firstname }}</td>
+                    <td class="align-middle">{{ candidat.birthDate|date('d-m-Y') }}</td>
+                    <td class="align-middle">{{ candidat.refPoleEmploi }}</td>
+                    <td class="align-middle"><a class="btn btn-primary"
+                                                href="{{ path('candidat_detail',{'id':candidat.id}) }}">Voir le
+                            détail</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

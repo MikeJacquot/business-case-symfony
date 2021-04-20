@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CandidatController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="container">
+        <h1>Detail du candidat n° {{ candidat.id }}</h1>
+        <div class="card mx-auto"  style="width: 18rem;">
+            <div class="card-body">
+                <h4 class="card-title text-center">{{ candidat.lastname }} {{ candidat.firstname }}</h4>
+                <h6 class="card-subtitle my-3 text-muted"><strong>Né(e) le : </strong>{{ candidat.birthDate|date('d/m/Y') }}</h6>
+                <h6 class="card-subtitle my-3 text-muted"><strong>Référence Pole Emploi N° :</strong> {{ candidat.refPoleEmploi }}</h6>
+                <a href="#" class="card-link btn btn-outline-warning">Modifier</a>
+                <a href="{{ path('candidat_delete',{'id':candidat.id}) }}" class="card-link btn btn-outline-danger">Supprimer</a>
+            </div>
+
+        </div>
+        <div class="my-5 text-center">
+            <a href="{{ path('candidat') }}" class="btn btn-dark">Retour</a>
+        </div>
+
+    </div>
+{% endblock %}

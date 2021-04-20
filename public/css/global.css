@@ -1,0 +1,31 @@
+
+body{
+    background-color: #FBF7F0;
+}
+table{
+    background-color: floralwhite;
+}
+h1{
+    width: fit-content;
+    margin: 30px auto;
+
+}
+tr,thead {
+    background: #FBF7F0 !important;
+    box-shadow: 0 3px 4px #555555, inset 0 -4px 10px #CDC9C3, inset 0 4px 10px #CDC9C3;
+    border: solid 1px #555555;
+}
+input{
+    background: #D9E4DD !important;
+}
+select{
+    background: #D9E4DD !important;
+}
+.paginate_button{
+    background: #D9E4DD !important;
+}
+.current{
+    background: #555555 !important;
+    color: white !important;
+    font-weight: bolder !important;
+}

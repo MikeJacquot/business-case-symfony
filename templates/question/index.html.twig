@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello QuestionController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Ma Liste de questions ✅</h1>
+
+    <table class="table shadow text-center">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Detail</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>question1</td>
+            <td><a class="btn btn-primary" href="{{ path('question_detail',{'id':1}) }}">Voir le détail</a></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>question2</td>
+            <td><a class="btn btn-primary" href="{{ path('question_detail',{'id':2}) }}">Voir le détail</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
